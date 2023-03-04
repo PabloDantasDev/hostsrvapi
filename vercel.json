@@ -7,16 +7,7 @@
     "output": "api/index.js",
     "use": "@vercel/node"
   }
-}
-Certifique-se de que a propriedade output esteja apontando para o caminho correto do arquivo de construção do seu aplicativo.
-
-Após fazer essa alteração, salve o arquivo vercel.json e implante seu aplicativo novamente.
-
-
-
-
-
-,
+},
     "routes": [
         {
             "src": "/(.*)",
