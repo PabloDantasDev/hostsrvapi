@@ -6,11 +6,13 @@ import axios from 'axios';
 const app = express();
 const route = Router();
 
-app.use(cors({  res.setHeader('Access-Control-Allow-Origin', '*');
+app.use(cors());
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   next();
-  optionsSuccessStatus: 200 // Alguns navegadores (por exemplo, IE11) não suportam o status[r.monarge] 204
-}));
+});
 
 route.get('/cpf/:cpf', async (req, res) => {
   try {
