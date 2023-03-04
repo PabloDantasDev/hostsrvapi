@@ -1,10 +1,16 @@
 {
   "name": "deploy-node-in-vercel",
   "version": 2,
-  "builds": [
-    { "src": "index.js", "use": "@vercel/node" }
-  ],
+  "public": true,
+  "functions": {
+    "api/index.js": {
+      "runtime": "vercel-node@16"
+    }
+  },
   "routes": [
-    { "src": "/api/cpf/:cpf", "dest": "/api/cpf/:cpf" }
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
+    }
   ]
 }
