@@ -2,10 +2,13 @@
   "name": "deploy-node-in-vercel",
   "version": 2,
   "public": true,
-  "build": {
-    "src": "api/index.js",
-    "use": "@vercel/node"
-  },
+  {
+  "functions": {
+    "api/index.js": {
+      "runtime": "@vercel/node"
+    }
+  }
+},
   "routes": [
     {
       "src": "/(.*)",
