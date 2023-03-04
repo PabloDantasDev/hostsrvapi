@@ -4,14 +4,13 @@
   "public": true,
   "functions": {
     "api/index.js": {
-      "runtime": "vercel-node@0.12.2"
+      "runtime": "vercel-node@16"
     }
   },
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/$1"
-    
+      "src": "/(.*)",
+      "dest": "api/index.js"
     }
   ]
 }
