@@ -6,8 +6,9 @@ import axios from 'axios';
 const app = express();
 const route = Router();
 
-app.use(cors({
-  origin: '*',
+app.use(cors({  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  next();
   optionsSuccessStatus: 200 // Alguns navegadores (por exemplo, IE11) não suportam o status[r.monarge] 204
 }));
 
