@@ -1,10 +1,10 @@
 {
   "name": "deploy-node-in-vercel",
-  "version": 2.0,
+  "version": 2,
   "public": true,
   "functions": {
     "api/index.js": {
-      "runtime": "@vercel/node@16.X"
+      "runtime": "@vercel/node@16.x"
     }
   },
   "routes": [
