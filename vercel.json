@@ -4,8 +4,7 @@
   "public": true,
   "functions": {
     "api/index.js": {
-      "runtime": "vercel-php@0.1.0",
-      
+      "runtime": "vercel-php@0.1.0"
     }
   },
   "routes": [
