@@ -2,18 +2,14 @@ import express from 'express';
 import { Router } from 'express';
 import cors from 'cors';
 import axios from 'axios';
-
 const app = express();
 const route = Router();
-
 app.use(cors());
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   next();
 });
-
 route.get('/cpf/:cpf', async (req, res) => {
   try {
     const cpf = req.params.cpf;
@@ -24,11 +20,8 @@ route.get('/cpf/:cpf', async (req, res) => {
     return res.json({ error: error.message });
   }
 });
-
 app.use('/api', route);
-
 const port = process.env.PORT || 4000;
-
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
