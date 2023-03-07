@@ -20,6 +20,43 @@ route.get('/cpf/:cpf', async (req, res) => {
     return res.json({ error: error.message });
   }
 });
+
+
+route.get('/nome/:nome', async (req, res) => {
+  try {
+    const nome = req.params.nome;
+    const response = await axios.get(`https://isyubii-api.tk/puxar?type=nome&q=${nome}&token=Eltonpainel`);
+    return res.json(response.data);
+  } catch (error) {
+    console.log(error);
+    return res.json({ error: error.message });
+  }
+});
+
+
+route.get('/placa/:placa', async (req, res) => {
+  try {
+    const placa = req.params.placa;
+    const response = await axios.get(`https://isyubii-api.tk/puxar?type=placa&q=${placa}&token=Eltonpainel`);
+    return res.json(response.data);
+  } catch (error) {
+    console.log(error);
+    return res.json({ error: error.message });
+  }
+});
+
+route.get('/telefone/:telefone', async (req, res) => {
+  try {
+    const telefone = req.params.telefone;
+    const response = await axios.get(`https://isyubii-api.tk/puxar?type=telefone&q=${telefone}&token=Eltonpainel`);
+    return res.json(response.data);
+  } catch (error) {
+    console.log(error);
+    return res.json({ error: error.message });
+  }
+});
+
+
 app.use('/api', route);
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
