@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 route.get('/cpf/:cpf', async (req, res) => {
   try {
     const cpf = req.params.cpf;
-    const response = await axios.get(`https://isyubii-api.tk/puxar?type=cpf3&q=${cpf}&token=Eltonpainel`);
+    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=cpf1&q=${cpf}&token=Eltonpainel`);
     return res.json(response.data);
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ route.get('/cpf/:cpf', async (req, res) => {
 route.get('/nome/:nome', async (req, res) => {
   try {
     const nome = req.params.nome;
-    const response = await axios.get(`https://isyubii-api.tk/puxar?type=nome&q=${nome}&token=Eltonpainel`);
+    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=nome&q=${nome}&token=Eltonpainel`);
     return res.json(response.data);
   } catch (error) {
     console.log(error);
@@ -37,7 +37,7 @@ route.get('/nome/:nome', async (req, res) => {
 route.get('/placa/:placa', async (req, res) => {
   try {
     const placa = req.params.placa;
-    const response = await axios.get(`https://isyubii-api.tk/puxar?type=placa&q=${placa}&token=Eltonpainel`);
+    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=placa&q=${placa}&token=Eltonpainel`);
     return res.json(response.data);
   } catch (error) {
     console.log(error);
@@ -48,7 +48,7 @@ route.get('/placa/:placa', async (req, res) => {
 route.get('/telefone/:telefone', async (req, res) => {
   try {
     const telefone = req.params.telefone;
-    const response = await axios.get(`https://isyubii-api.tk/puxar?type=telefone&q=${telefone}&token=Eltonpainel`);
+    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=telefone&q=${telefone}&token=Eltonpainel`);
     return res.json(response.data);
   } catch (error) {
     console.log(error);
