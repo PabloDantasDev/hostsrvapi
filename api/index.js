@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 route.get('/cpf/:cpf', async (req, res) => {
   try {
     const cpf = req.params.cpf;
-    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=cpf1&q=${cpf}&token=Eltonpainel`);
+    const response = await axios.get(`https://api-buscas.herokuapp.com/puxar?type=cpf3&q=${cpf}&token=Eltonpainel`);
     return res.json(response.data);
   } catch (error) {
     console.log(error);
